@@ -157,7 +157,7 @@ def summary(request, pk):
     products = Product.objects.filter(cust_name=pk)
     sum_service_charge = Service.objects.filter(cust_name=pk).aggregate(Sum('service_charge'))
     sum_product_charge = Product.objects.filter(cust_name=pk).aggregate(Sum('charge'))
-    return render(request, 'crm/summary.html', {'customers': customers,
+    return render(request, 'crm/Summary.html', {'customers': customers,
                                                     'products': products,
                                                     'services': services,
                                                     'sum_service_charge': sum_service_charge,
